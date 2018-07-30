@@ -963,13 +963,13 @@ static int pcapng_read_packet(libtrace_t *libtrace, libtrace_packet_t *packet)
                         /* Section Header */
                         case PCAPNG_SECTION_TYPE:
                                 err = pcapng_read_section(libtrace, packet, flags);
-                                gotpacket = 1;
+                                gotpacket = 0;
                                 break;
 
                         /* Interface Header */
                         case PCAPNG_INTERFACE_TYPE:
                                 err = pcapng_read_interface(libtrace, packet, to_read, flags);
-                                gotpacket = 1;
+                                gotpacket = 0;
                                 break;
 
 
